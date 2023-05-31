@@ -6,17 +6,7 @@
 # Note that environment variables can be set in several places
 # See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 stages:
-  - mirror
   - test
-
-mirror_to_github:
-  stage: mirror
-  image: alpine/git
-  script:
-    - git clone --mirror git@gitlab.com:Miesianinov/cpp_learning.git .
-    - git push --mirror git@github.com:artemmiesianinov/cpp_learning_mirror.git
-  only:
-    - master
 
 sast:
   stage: test
