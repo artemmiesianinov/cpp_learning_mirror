@@ -148,8 +148,8 @@ Widget::~Widget() {
 
 Resource Acquisition Is Initialization or RAII, is a C++ programming technique which binds the life cycle of a resource that must be acquired before use (allocated heap memory, thread of execution, open socket, open file, locked mutex, disk space, database connection — anything that exists in limited supply) to the lifetime of an object.
 
-
 RAII guarantees that the resource is available to any function that may access the object (resource availability is a class invariant, eliminating redundant runtime tests). It also guarantees that all resources are released when the lifetime of their controlling object ends, in reverse order of acquisition. Likewise, if resource acquisition fails (the constructor exits with an exception), all resources acquired by every fully-constructed member and base subobject are released in reverse order of initialization. This leverages the core language features (object lifetime, scope exit, order of initialization and stack unwinding) to eliminate resource leaks and guarantee exception safety. Another name for this technique is Scope-Bound Resource Management (SBRM), after the basic use case where the lifetime of an RAII object ends due to scope exit.
+
 RAII can be summarized as follows:
 
 1) encapsulate each resource into a class, where
@@ -190,6 +190,7 @@ Output stream class to operate on strings.
 Objects of this class use a string buffer that contains a sequence of characters. This sequence of characters can be accessed directly as a string object, using member str()
 
 Characters can be inserted into the stream with any operation allowed on output streams.
+
 ``` c++
    std::ostringstream outstr;
    double price = 380.0;
@@ -200,7 +201,7 @@ Characters can be inserted into the stream with any operation allowed on output 
    std::string str = outstr.str();
    std::cout << str;
 
-   //output: Pay only CHF 380.00 for a copy of the ISO/EIC C++ standard!
+   /* output: Pay only CHF 380.00 for a copy of the ISO/EIC C++ standard! */
 ```
 
 ## Input and output with files
@@ -231,7 +232,7 @@ return;
 
 When we are finished with our input and output operations on a file we shall close it so that the operating system is notified and its resources become available again. For that, we call the stream's member function close. This member function takes flushes the associated buffers and closes the file:
 
-``` c+++
+``` c++
 myfile.close();
 ```
 
