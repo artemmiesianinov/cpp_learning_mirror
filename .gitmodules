@@ -1,0 +1,6 @@
+[submodule "executors"]
+	path = executors
+	url = git@github.com:artemmiesianinov/executors.git
+[submodule "zerocopy"]
+	path = zerocopy
+	url = git@github.com:artemmiesianinov/project52.git
