@@ -4,3 +4,6 @@
 [submodule "zerocopy"]
 	path = zerocopy
 	url = git@github.com:artemmiesianinov/project52.git
+[submodule "boost.asio"]
+	path = boost.asio
+	url = git@gitlab.com:Miesianinov/boost.asio.learning.git
